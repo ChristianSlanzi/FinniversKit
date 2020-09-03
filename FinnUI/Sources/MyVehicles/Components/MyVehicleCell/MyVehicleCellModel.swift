@@ -6,6 +6,22 @@ public struct MyVehicleCellModel: Identifiable, Hashable {
     public var subtitle: String
     public var detail: String
 
+    public init(
+        id: String,
+        imageUrl: String,
+        imagePath: String?,
+        title: String,
+        subtitle: String,
+        detail: String
+    ) {
+        self.id = id
+        self.imageUrl = imageUrl
+        self.imagePath = imagePath
+        self.title = title
+        self.subtitle = subtitle
+        self.detail = detail
+    }
+
     public func constructImageURL() -> URL? {
         guard
             let path = imagePath,

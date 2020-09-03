@@ -5,8 +5,16 @@ public struct MyVehiclesListView: View {
 
     // MARK: - Init
 
-    let viewModel: MyVehiclesListViewModel
-    var handleAddNewVehicle: (() -> Void) = {}
+    private let viewModel: MyVehiclesListViewModel
+    private var handleAddNewVehicle: (() -> Void)
+
+    public init(
+        viewModel: MyVehiclesListViewModel,
+        handleAddNewVehicle: @escaping (() -> Void) = {}
+    ) {
+        self.viewModel = viewModel
+        self.handleAddNewVehicle = handleAddNewVehicle
+    }
 
     // MARK: - Private
 
